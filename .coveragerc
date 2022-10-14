@@ -1,0 +1,11 @@
+[run]
+source =
+        service_api/domain
+
+omit =
+        */__init__.py
+        */serde.py
+        service_api/domain/forms.py
+
+[report]
+ignore_errors = True

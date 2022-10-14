@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  postgres:
+    image: bitnami/postgresql:14
+    environment:
+      - POSTGRESQL_USERNAME=sanic_skeleton_api
+      - POSTGRESQL_PASSWORD=sanic_skeleton_api
+      - POSTGRESQL_DATABASE=sanic_skeleton_api
+    ports:
+      - "5432:5432"
