@@ -5,6 +5,8 @@ from sqlalchemy import pool
 
 from alembic import context
 
+from service_api.config import RuntimeConfig
+
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config
@@ -23,6 +25,13 @@ target_metadata = None
 # can be acquired:
 # my_important_option = config.get_main_option("my_important_option")
 # ... etc.
+
+section = config.config_ini_section
+config.set_section_option(section, "PG_USER", RuntimeConfig.PG_USER)
+config.set_section_option(section, "PG_PASSWORD", RuntimeConfig.PG_PASSWORD)
+config.set_section_option(section, "PG_HOST", RuntimeConfig.PG_HOST)
+config.set_section_option(section, "PG_PORT", RuntimeConfig.PG_PORT)
+config.set_section_option(section, "PG_NAME", RuntimeConfig.PG_NAME)
 
 
 def run_migrations_offline():
